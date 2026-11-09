@@ -157,12 +157,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="support">
       <div class="card">
         <h3>Open a ticket</h3>
-        <form id="ticket">
-          <input id="t-email" type="email" placeholder="Your email (for our reply)" required>
-          <select id="t-type"><option>Sales</option><option>Support</option><option>Billing</option></select>
-          <textarea id="t-msg" rows="4" placeholder="How can we help?" required></textarea>
-          <button class="btn" type="submit">Submit ticket</button>
-        </form>
+        <p style="color:var(--mute);margin-top:4px">Start a chat with us. If no one is online, leave a message and it becomes a ticket we answer by email.</p>
+        <button class="btn" type="button" onclick="try{Tawk_API.maximize()}catch(e){}">Open chat / ticket</button>
         <p class="mono" style="margin-top:14px">Or email <a href="mailto:support@stoxswap.com">support@stoxswap.com</a></p>
       </div>
       <div class="card">
@@ -187,17 +183,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <span><a href="mailto:support@stoxswap.com">support@stoxswap.com</a></span>
   </div>
 </footer>
-
-<script>
-document.getElementById('ticket').addEventListener('submit',function(e){
-  e.preventDefault();
-  var type=document.getElementById('t-type').value;
-  var email=document.getElementById('t-email').value;
-  var msg=document.getElementById('t-msg').value;
-  var body='From: '+email+'\n\n'+msg;
-  location.href='mailto:tickets@anonhost-bmuqn3.p.tawk.email?subject='+encodeURIComponent('['+type+'] AnonHost ticket')+'&body='+encodeURIComponent(body);
-});
-</script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
