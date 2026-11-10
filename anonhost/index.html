@@ -92,19 +92,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <h3>Nano</h3>
         <div class="price">$33.36<small> /mo</small></div>
         <ul><li>1 vCPU</li><li>2 GB RAM</li><li>40 GB SSD</li><li>KVM &middot; root access</li><li>DDoS protection</li></ul>
-        <a class="btn" href="mailto:support@stoxswap.com?subject=AnonHost%20order%3A%20VPS%20Nano">Order Nano</a>
+        <a class="btn" href="#support" data-plan="VPS%20Nano">Order Nano</a>
       </div>
       <div class="card">
         <h3>Core</h3>
         <div class="price">$47.92<small> /mo</small></div>
         <ul><li>2 vCPU</li><li>4 GB RAM</li><li>80 GB SSD</li><li>KVM &middot; root access</li><li>DDoS protection</li></ul>
-        <a class="btn" href="mailto:support@stoxswap.com?subject=AnonHost%20order%3A%20VPS%20Core">Order Core</a>
+        <a class="btn" href="#support" data-plan="VPS%20Core">Order Core</a>
       </div>
       <div class="card">
         <h3>Pro</h3>
         <div class="price">$131.08<small> /mo</small></div>
         <ul><li>4 vCPU</li><li>8 GB RAM</li><li>160 GB SSD</li><li>KVM &middot; root access</li><li>DDoS protection</li></ul>
-        <a class="btn" href="mailto:support@stoxswap.com?subject=AnonHost%20order%3A%20VPS%20Pro">Order Pro</a>
+        <a class="btn" href="#support" data-plan="VPS%20Pro">Order Pro</a>
       </div>
     </div>
   </div>
@@ -119,19 +119,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <h3>AI Starter</h3>
         <div class="price">$3.59<small> /mo</small></div>
         <ul><li>AI website builder</li><li>Free SSL</li><li>Unmetered bandwidth</li><li>Great for portfolios &amp; landing pages</li></ul>
-        <a class="btn" href="mailto:support@stoxswap.com?subject=AnonHost%20order%3A%20AI%20Starter">Order Starter</a>
+        <a class="btn" href="#support" data-plan="AI%20Starter">Order Starter</a>
       </div>
       <div class="card">
         <h3>AI Business</h3>
         <div class="price">$20.48<small> /mo</small></div>
         <ul><li>AI builder + writing + images</li><li>Free SSL &amp; daily backups</li><li>Generous SSD storage</li><li>Built for growing projects</li></ul>
-        <a class="btn" href="mailto:support@stoxswap.com?subject=AnonHost%20order%3A%20AI%20Business">Order Business</a>
+        <a class="btn" href="#support" data-plan="AI%20Business">Order Business</a>
       </div>
       <div class="card">
         <h3>GPU &amp; Custom</h3>
         <div class="price">Quote</div>
         <ul><li>Dedicated GPU servers</li><li>Custom AI inference stacks</li><li>Tailored to your workload</li></ul>
-        <a class="btn" href="mailto:support@stoxswap.com?subject=AnonHost%20quote%3A%20GPU%20%2F%20custom">Request a quote</a>
+        <a class="btn" href="#support" data-plan="GPU%20%2F%20custom">Request a quote</a>
       </div>
     </div>
   </div>
@@ -157,6 +157,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="support">
       <div class="card">
         <h3>Open a ticket</h3>
+        <p id="plan-note" class="mono" style="display:none;color:var(--acc);margin:6px 0 0"></p>
         <p style="color:var(--mute);margin-top:4px">Start a chat with us. If no one is online, leave a message and it becomes a ticket we answer by email.</p>
         <button class="btn" type="button" onclick="try{Tawk_API.maximize()}catch(e){}">Open chat / ticket</button>
         <p class="mono" style="margin-top:14px">Or email <a href="mailto:support@stoxswap.com">support@stoxswap.com</a></p>
@@ -183,6 +184,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <span><a href="mailto:support@stoxswap.com">support@stoxswap.com</a></span>
   </div>
 </footer>
+
+<script>
+document.querySelectorAll('a[data-plan]').forEach(function(a){
+  a.addEventListener('click',function(){
+    var n=document.getElementById('plan-note');
+    n.textContent='Plan selected: '+decodeURIComponent(a.getAttribute('data-plan'))+' - mention it when you contact us.';
+    n.style.display='block';
+  });
+});
+</script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
